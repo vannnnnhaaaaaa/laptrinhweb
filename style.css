@@ -126,7 +126,7 @@ footer {
   margin:50px 0px 50px 0px;
 }
 #home {
-  display: none;
+  display: block;
 }
 /* -------------home-------------------------- */
 /* --------------about------------------------- */
@@ -196,7 +196,7 @@ font-size: 25px;
 /* ----------------library------------- */
 #library {
 background-color: white;
-display: block;
+display: none;
 }
 
 
@@ -257,6 +257,11 @@ cursor: pointer;
   display: grid;
   grid-template-columns: repeat(3,230px);
   gap: 2px;
+}
+.pictures img:hover{
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+  transform: scale(1.1); 
 }
 .picture img {
   width: 100%;
