@@ -29,41 +29,37 @@ document.addEventListener('DOMContentLoaded',function(){
     });
     
     // Đặt sự kiện cho nút .thunho bên ngoài vòng lặp
-    var buttonThunho = document.querySelector('.thunho');
-    buttonThunho.addEventListener('click', function() {
-        var pics = document.querySelectorAll('.pic');
-       
-        pics.forEach(function(pic) {
-            pic.style.display = 'none';
-        });
-    });
+   
+// ----------------------------------------------------
+    var selectIcon = document.querySelectorAll('.icon')
 
-// Lấy modal và hình ảnh trong modal
-var modal = document.getElementById('yModal');
-var modalImg = document.getElementById('imgInModal');
-var closeBtn = document.querySelector('.close'); // Nút đóng modal
+    selectIcon.forEach(function(e){
+        e.addEventListener('click' , function(){
+            
+            if(e.className =="iconhome icon") {
+                close("#home") ;
+            }else if(e.className =="about icon"){
+                close("#about") ;
+            }else if (e.className =="project icon"){
+                close ("#project") ;
+            }else if (e.className =="library icon"){
+                close ("#library");
+            }else if (e.className =="photo icon"){
+                close ("#photo");
+            }else {
+                alert("ok");
+            }
+        })
+    })
 
-// Lấy tất cả ảnh trong gallery
-var pics = document.querySelectorAll('.pic');
-
-// Khi người dùng click vào một ảnh, mở modal với ảnh gốc
-pics.forEach(function(pic) {
-    pic.addEventListener('click', function() {
-        modal.style.display = "flex"; // Hiển thị modal
-        modalImg.src = pic.src; // Đặt src của ảnh trong modal là src của ảnh đã nhấn
-    });
-});
-
-// Khi người dùng click vào nút 'x' để đóng modal
-closeBtn.addEventListener('click', function() {
-    modal.style.display = "none"; // Đóng modal
-});
-
-// Khi người dùng click ra ngoài hình ảnh, modal sẽ đóng
-modal.addEventListener('click', function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
+    function close(element){
+        var pages  = document.querySelectorAll('.page');
+        var page = document.querySelector(element)
+        pages.forEach(function(e){
+            e.style.display = "none" ;
+        })
+        page.style.display = "block";
     }
-});
+
 
 })
