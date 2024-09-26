@@ -40,14 +40,20 @@ document.addEventListener('DOMContentLoaded',function(){
                 close("#home") ;
             }else if(e.className =="about icon"){
                 close("#about") ;
-            }else if (e.className =="project icon"){
-                close ("#project") ;
             }else if (e.className =="library icon"){
                 close ("#library");
             }else if (e.className =="photo icon"){
                 close ("#photo");
-            }else {
-                alert("ok");
+            }else if (e.className =="facebook icon"){
+                window.location.href ="https://www.facebook.com/chuixx.cuixx"
+            }else if (e.className =="instagram icon"){
+                window.location.href ="https://www.instagram.com/yenhuynhhh289/"
+            }else if (e.className =="tiktok icon"){
+                window.location.href ="https://www.tiktok.com/@yenhuynh134"
+            }
+            
+            else {
+                alert("Mấy phần này vội quá làm chưa tới chị Yến ơi  :D");
             }
         })
     })
@@ -61,5 +67,18 @@ document.addEventListener('DOMContentLoaded',function(){
         page.style.display = "block";
     }
 
+
+    const video = document.querySelector('#snvv');
+    video.style.display = 'none';
+    video.pause();
+    video.currentTime = 0; 
+    setTimeout(function(){
+        video.style.display = 'block';
+        video.play();
+    },3000)
+
+    setTimeout(function(){
+        video.style.display = 'none';
+    },8500)
 
 })
